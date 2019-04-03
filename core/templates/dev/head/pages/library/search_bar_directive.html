@@ -61,6 +61,23 @@
         </a>
       </li>
     </ul>
+    <ul uib-dropdown-menu class="oppia-library-menu" role="menu" style="max-height: 400px; overflow: auto;" ng-click="$event.stopPropagation()">
+      <li ng-repeat="item in selectionDetails.categories.masterList track by $index"
+          ng-if="selectionDetails.categories.selections[item.id]">
+        <a href="" ng-click="toggleSelection('categories', item.id)" ng-if="!$first && !$last">
+          <span translate="<[item.text]>" class="protractor-test-selected"></span>
+          <i ng-if="selectionDetails.categories.selections[item.id]" class="material-icons md-18 pull-right oppia-search-bar-category-selection-symbol">&#xE876;</i>
+        </a>
+        <a href="" ng-click="toggleSelection('categories', item.id)" ng-if="$first" ng-keydown="onMenuKeypress($event, 'category', {shiftTab: ACTION_CLOSE})">
+          <span translate="<[item.text]>" class="protractor-test-selected"></span>
+          <i ng-if="selectionDetails.categories.selections[item.id]" class="material-icons md-18 pull-right oppia-search-bar-category-selection-symbol">&#xE876;</i>
+        </a>
+        <a href="" ng-click="toggleSelection('categories', item.id)" ng-if="$last" ng-keydown="onMenuKeypress($event, 'category', {tab: ACTION_CLOSE})">
+          <span translate="<[item.text]>" class="protractor-test-selected"></span>
+          <i ng-if="selectionDetails.categories.selections[item.id]" class="material-icons md-18 pull-right oppia-search-bar-category-selection-symbol">&#xE876;</i>
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
 <div ng-class="{'open' : activeMenuName === 'language'}" uib-dropdown class="navbar-left oppia-navbar-button-container oppia-search-bar-language-selector protractor-test-search-bar-language-selector">

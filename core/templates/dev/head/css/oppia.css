@@ -133,11 +133,6 @@ md-input-group.md-default-theme label {
   margin-right: 20px;
 }
 
-.protractor-test-search-bar-dropdown-menu {
-  width: 170px;
-}
-
-
 /* Attributes for material-icons. */
 .material-icons {
   vertical-align: middle;
@@ -243,6 +238,7 @@ body {
   margin: 0 auto 30px auto;
   max-width: 800px;
 }
+
 
 .oppia-learner-dashboard-icon {
   color: white;
